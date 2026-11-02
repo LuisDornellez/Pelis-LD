@@ -1,0 +1,33 @@
+name: Actualizar listas M3U
+on:
+  push:
+    branches: [main, master]
+    paths: [config.json, scripts/verificar.py, .github/workflows/actualizar-listas.yml]
+  schedule:
+    - cron: "0 6 * * *"   # todos los días a las 06:00 UTC
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: actualizar-listas
+  cancel-in-progress: false
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/verificar.py config.json
+      - name: Publicar listas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add listas
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar listas M3U"
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            git push
+          fi

@@ -1,0 +1,154 @@
+name: Build and Release APK
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-apk
+  cancel-in-progress: true
+
+env:
+  GRADLE_VERSION: "8.5"
+  APK_NAME: PelisLD-latest.apk
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: "17"
+
+      # Se usa el SDK de Android que ya trae el runner (sin android-actions/setup-android).
+      - name: Accept Android SDK licenses
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
+
+      # Opcional: solo instala si faltan las versiones fijadas.
+      - name: Ensure pinned SDK packages
+        id: sdk
+        continue-on-error: true
+        run: |
+          [ -d "$ANDROID_HOME/platforms/android-34" ] || "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-34"
+          [ -d "$ANDROID_HOME/build-tools/34.0.0" ] || "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "build-tools;34.0.0"
+
+      # Opcional: si falla, solo se compila sin caché.
+      - name: Restore Gradle cache
+        id: cache
+        continue-on-error: true
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle', 'gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+
+      # Gradle fijo en 8.5: el wrapper se genera en una carpeta vacía (sin leer el proyecto) y se copia.
+      - name: Prepare Gradle wrapper
+        run: |
+          if [ ! -f gradle/wrapper/gradle-wrapper.jar ]; then
+            curl -fsSL -o /tmp/gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip"
+            unzip -q /tmp/gradle.zip -d /tmp
+            mkdir -p /tmp/wrapper-gen
+            touch /tmp/wrapper-gen/settings.gradle
+            (cd /tmp/wrapper-gen && "/tmp/gradle-${GRADLE_VERSION}/bin/gradle" wrapper --gradle-version "${GRADLE_VERSION}" --no-daemon)
+            cp /tmp/wrapper-gen/gradlew /tmp/wrapper-gen/gradlew.bat .
+            mkdir -p gradle/wrapper
+            cp /tmp/wrapper-gen/gradle/wrapper/gradle-wrapper.jar /tmp/wrapper-gen/gradle/wrapper/gradle-wrapper.properties gradle/wrapper/
+          fi
+          chmod +x gradlew
+          ./gradlew --version
+
+      # Sube en cada compilación (minutos desde 1970, siempre mayor que la anterior).
+      - name: Set version code
+        run: |
+          echo "APK_VERSION_CODE=$(( $(date +%s) / 60 ))" >> "$GITHUB_ENV"
+
+      - name: Build debug APK
+        id: build
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
+
+      # El caché se guarda justo después de compilar, no al final del job.
+      - name: Save Gradle cache
+        if: steps.build.outcome == 'success' && steps.cache.outputs.cache-hit != 'true'
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle', 'gradle/wrapper/gradle-wrapper.properties') }}
+
+      # Opcional: comprueba qué quedó dentro del APK.
+      - name: Inspect APK contents
+        id: inspect
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        run: |
+          APK_NAME=$(find app/build/outputs/apk/debug -name "*.apk" | head -n 1)
+          unzip -l "$APK_NAME" | grep -q 'lib/.*librtmp' && echo "rtmp=sí" >> "$GITHUB_OUTPUT" || echo "rtmp=no" >> "$GITHUB_OUTPUT"
+          unzip -l "$APK_NAME" | grep -q 'classes.dex' && echo "dex=sí" >> "$GITHUB_OUTPUT" || echo "dex=no" >> "$GITHUB_OUTPUT"
+          SIGN=$(keytool -printcert -jarfile "$APK_NAME" 2>/dev/null | grep -m1 'SHA256' || true)
+          echo "sign=${SIGN:-no disponible}" >> "$GITHUB_OUTPUT"
+
+      - name: Publish APK to GitHub Releases
+        id: publish
+        if: steps.build.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp "$(find app/build/outputs/apk/debug -name '*.apk' | head -n 1)" "$APK_NAME"
+          gh release delete apk-latest --cleanup-tag --yes || true
+          gh release create apk-latest "$APK_NAME" --target "$GITHUB_SHA" --title "Última compilación" --prerelease --notes "Compilación $GITHUB_RUN_NUMBER"
+
+      - name: Write report (summary and release notes)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          R_SDK: ${{ steps.sdk.outcome }}
+          R_CACHE: ${{ steps.cache.outcome }}
+          R_BUILD: ${{ steps.build.outcome }}
+          R_INSPECT: ${{ steps.inspect.outcome }}
+          R_PUBLISH: ${{ steps.publish.outcome }}
+          O_RTMP: ${{ steps.inspect.outputs.rtmp }}
+          O_DEX: ${{ steps.inspect.outputs.dex }}
+          O_SIGN: ${{ steps.inspect.outputs.sign }}
+        run: |
+          mark() { case "$1" in success) echo "✅ incluido";; skipped|"") echo "⏭️ omitido";; *) echo "❌ falló ($1)";; esac; }
+          {
+            echo "## Pelis LD · compilación $GITHUB_RUN_NUMBER"
+            echo ""
+            echo "Código de versión: ${APK_VERSION_CODE:-no definido}"
+            echo ""
+            echo "### Componentes"
+            echo "- APK debug (Gradle $GRADLE_VERSION, AGP 8.2.2, Kotlin 1.9.22): $(mark "$R_BUILD")"
+            echo "- Reproductor ExoPlayer 2.19.1: $(mark "$R_BUILD")"
+            echo "- Soporte RTMP nativo (librtmp): $(mark "$R_INSPECT") · en el APK: ${O_RTMP:-?}"
+            echo "- OkHttp 4.12.0 y Jsoup 1.17.2: $(mark "$R_BUILD")"
+            echo "- Firma estable: $(mark "$R_INSPECT") · ${O_SIGN:-sin datos}"
+            echo "- Publicación en el release apk-latest: $(mark "$R_PUBLISH")"
+            echo ""
+            echo "### Pasos opcionales"
+            echo "- SDK fijado (android-34 / build-tools 34.0.0): $(mark "$R_SDK")"
+            echo "- Caché de Gradle: $(mark "$R_CACHE")"
+          } > report.md
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+          gh release edit apk-latest --notes-file report.md || true

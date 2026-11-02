@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/netflix_black">
+
+    <LinearLayout android:id="@+id/content" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+
+        <FrameLayout android:id="@+id/playerBox" android:layout_width="match_parent" android:layout_height="220dp" android:background="#000000">
+            <com.google.android.exoplayer2.ui.PlayerView android:id="@+id/playerView"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:keepScreenOn="true" app:use_controller="false" app:resize_mode="fit" app:show_buffering="when_playing"/>
+            <TextView android:id="@+id/status" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center" android:gravity="center" android:padding="16dp"
+                android:textColor="@color/white" android:textSize="15sp" android:visibility="gone"/>
+            <TextView android:id="@+id/tvTitle" android:layout_width="match_parent" android:layout_height="64dp"
+                android:layout_gravity="top" android:background="@drawable/scrim_top"
+                android:visibility="gone"/>
+            <TextView android:id="@+id/tvTitleText" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_gravity="top" android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="12dp" android:paddingBottom="22dp"                 android:maxLines="1" android:ellipsize="end" android:fontFamily="sans-serif-medium"
+                android:textColor="@color/white" android:textSize="16sp" android:visibility="gone"/>
+            <LinearLayout android:id="@+id/controls" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal" android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_controls" android:paddingStart="8dp" android:paddingEnd="8dp" android:paddingTop="3dp" android:paddingBottom="3dp"
+                android:orientation="horizontal" android:visibility="gone">
+                <ImageView android:id="@+id/cPrev" android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="3dp" android:padding="12dp" android:background="@drawable/bg_icon" android:src="@drawable/ic_prev" android:contentDescription="Canal anterior" android:scaleType="fitCenter" android:focusable="true" android:clickable="true"/>
+                <ImageView android:id="@+id/cFav" android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="3dp" android:padding="12dp" android:background="@drawable/bg_icon" android:src="@drawable/ic_star_border" android:contentDescription="Favorito" android:scaleType="fitCenter" android:focusable="true" android:clickable="true"/>
+                <ImageView android:id="@+id/cNext" android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="3dp" android:padding="12dp" android:background="@drawable/bg_icon" android:src="@drawable/ic_next" android:contentDescription="Canal siguiente" android:scaleType="fitCenter" android:focusable="true" android:clickable="true"/>
+                <ImageView android:id="@+id/cRest" android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="3dp" android:padding="12dp" android:background="@drawable/bg_icon" android:src="@drawable/ic_moon" android:contentDescription="Descanso visual" android:scaleType="fitCenter" android:focusable="true" android:clickable="true"/>
+                <ImageView android:id="@+id/cQual" android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="3dp" android:padding="12dp" android:background="@drawable/bg_icon" android:src="@drawable/ic_tune" android:contentDescription="Calidad de video" android:scaleType="fitCenter" android:focusable="true" android:clickable="true"/>
+                <ImageView android:id="@+id/cEq" android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="3dp" android:padding="12dp" android:background="@drawable/bg_icon" android:src="@drawable/ic_eq" android:contentDescription="Ecualizador" android:scaleType="fitCenter" android:focusable="true" android:clickable="true"/>
+                <ImageView android:id="@+id/cFull" android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="3dp" android:padding="12dp" android:background="@drawable/bg_icon" android:src="@drawable/ic_full" android:contentDescription="Pantalla completa" android:scaleType="fitCenter" android:focusable="true" android:clickable="true"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/overlayList"
+                android:layout_width="360dp" android:layout_height="match_parent" android:layout_gravity="end"
+                android:background="@drawable/bg_overlay" android:padding="8dp" android:clipToPadding="false" android:visibility="gone"/>
+        </FrameLayout>
+
+        <LinearLayout android:id="@+id/panel" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="vertical">
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@drawable/line_gold"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="14dp" android:paddingBottom="4dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PELIS" android:textColor="@color/white" android:textSize="16sp" android:letterSpacing="0.22" android:fontFamily="sans-serif-medium"/>
+                <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text=" LD" android:textColor="#D4AF37" android:textSize="16sp" android:letterSpacing="0.22" android:fontFamily="sans-serif-medium"/>
+                <TextView android:id="@+id/tvCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#8A8A99" android:textSize="12sp"/>
+                <TextView android:id="@+id/tvClock" android:layout_width="wrap_content" android:gravity="end" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:textColor="#D4AF37" android:textSize="13sp" android:fontFamily="sans-serif-medium"/>
+            </LinearLayout>
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none" android:fillViewport="true">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:padding="4dp">
+                    <ImageView android:id="@+id/btnPrev" android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="3dp" android:padding="12dp" android:background="@drawable/bg_icon" android:src="@drawable/ic_prev" android:contentDescription="Canal anterior" android:scaleType="fitCenter" android:focusable="true" android:clickable="true"/>
+                    <ImageView android:id="@+id/btnFav" android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="3dp" android:padding="12dp" android:background="@drawable/bg_icon" android:src="@drawable/ic_star_border" android:contentDescription="Favorito" android:scaleType="fitCenter" android:focusable="true" android:clickable="true"/>
+                    <ImageView android:id="@+id/btnNext" android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="3dp" android:padding="12dp" android:background="@drawable/bg_icon" android:src="@drawable/ic_next" android:contentDescription="Canal siguiente" android:scaleType="fitCenter" android:focusable="true" android:clickable="true"/>
+                    <TextView android:id="@+id/btnFull" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Pantalla completa" android:drawableStart="@drawable/ic_full" android:drawablePadding="6dp" android:drawableTint="@color/white"/>
+                    <TextView android:id="@+id/btnPtr" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Modo control" android:drawableStart="@drawable/ic_pointer" android:drawablePadding="6dp" android:drawableTint="@color/white"/>
+                    <TextView android:id="@+id/btnRest" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Descanso" android:drawableStart="@drawable/ic_moon" android:drawablePadding="6dp" android:drawableTint="@color/white"/>
+                    <TextView android:id="@+id/btnRestTune" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Ajustar" android:drawableStart="@drawable/ic_tune" android:drawablePadding="6dp" android:drawableTint="@color/white"/>
+                    <TextView android:id="@+id/btnLists" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Listas" android:drawableStart="@drawable/ic_list" android:drawablePadding="6dp" android:drawableTint="@color/white"/>
+                    <TextView android:id="@+id/btnQual" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Calidad" android:drawableStart="@drawable/ic_tune" android:drawablePadding="6dp" android:drawableTint="@color/white"/>
+                    <TextView android:id="@+id/btnEq" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Ecualizador" android:drawableStart="@drawable/ic_eq" android:drawablePadding="6dp" android:drawableTint="@color/white"/>
+                    <TextView android:id="@+id/btnDup" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Sin duplicados"/>
+                    <TextView android:id="@+id/btnDown" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Ocultar caídos"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="4dp" android:paddingEnd="4dp">
+                <TextView android:id="@+id/btnAll" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Todos"/>
+                <TextView android:id="@+id/btnFavs" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="38dp" android:layout_margin="3dp" android:text="Favoritos"/>
+                <EditText android:id="@+id/search" android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:layout_margin="3dp"
+                    android:background="@drawable/bg_search" android:hint="Buscar canal" android:textColorHint="#6E6E7C" android:textColor="@color/white"
+                    android:textSize="14sp" android:paddingStart="14dp" android:paddingEnd="16dp" android:drawableStart="@drawable/ic_search" android:drawablePadding="10dp" android:drawableTint="#6E6E7C" android:singleLine="true" android:imeOptions="actionSearch" android:inputType="text"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:paddingStart="8dp" android:paddingEnd="8dp" android:paddingTop="6dp" android:clipToPadding="false" android:overScrollMode="never" android:requiresFadingEdge="vertical" android:fadingEdgeLength="24dp"/>
+            <TextView android:id="@+id/credit" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center" android:paddingTop="12dp" android:paddingBottom="14dp"
+                android:background="@drawable/bg_link" android:clickable="true"
+                android:text="Creado por Luis Dornellez · www.luisdornellez.com"
+                android:textColor="#8A8A99" android:textSize="10sp" android:focusable="true"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View android:id="@+id/rest" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#4DFF8A00" android:clickable="false" android:focusable="false" android:visibility="gone"/>
+    <com.pelisld.app.PointerView android:id="@+id/pointer" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone" android:clickable="false" android:focusable="false"/>
+</FrameLayout>

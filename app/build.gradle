@@ -1,0 +1,68 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.pelisld.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.pelisld.app"
+        minSdk 24
+        targetSdk 34
+        // El workflow define APK_VERSION_CODE (sube en cada compilación) para poder instalar encima sin desinstalar.
+        versionCode Integer.parseInt(System.getenv("APK_VERSION_CODE") ?: "1")
+        versionName "2.0.0"
+
+        // Al compilar en GitHub, GITHUB_REPOSITORY (usuario/repo) indica dónde están las listas verificadas.
+        def repo = System.getenv("GITHUB_REPOSITORY") ?: ""
+        def listsBase = repo ? "https://raw.githubusercontent.com/${repo}/HEAD/listas/" : ""
+        buildConfigField "String", "LISTS_BASE", "\"${listsBase}\""
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    // Firma estable (misma clave en cada compilación) para poder actualizar sin desinstalar.
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Reproductor de Video (ExoPlayer)
+    implementation 'com.google.android.exoplayer:exoplayer:2.19.1'
+    // Soporte para rtmp:// (incluye la librería nativa librtmp)
+    implementation 'com.google.android.exoplayer:extension-rtmp:2.19.1'
+
+    // Conectividad y Extracción
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+}

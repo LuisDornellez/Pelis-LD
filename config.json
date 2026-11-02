@@ -1,0 +1,72 @@
+{
+  "_ayuda": "modo: tolerante = quita solo los canales claramente caídos y conserva los que podrían estar bloqueados por país (recomendado) | estricto = deja solo los que responden desde GitHub (Estados Unidos) | completa = no verifica, deja todos",
+  "fuentes": [
+    {
+      "nombre": "brasil_m3ucl",
+      "url": "https://m3u.cl/lista/BR.m3u",
+      "solo_peliculas": false,
+      "modo": "tolerante"
+    },
+    {
+      "nombre": "mexico_lg",
+      "url": "https://raw.githubusercontent.com/Llorchico/LG/refs/heads/main/mxlg.m3u",
+      "solo_peliculas": false,
+      "modo": "tolerante"
+    },
+    {
+      "nombre": "espanol",
+      "url": "https://iptv-org.github.io/iptv/languages/spa.m3u",
+      "solo_peliculas": false,
+      "modo": "tolerante"
+    },
+    {
+      "nombre": "peliculas",
+      "url": "https://iptv-org.github.io/iptv/categories/movies.m3u",
+      "solo_peliculas": false,
+      "modo": "tolerante"
+    },
+    {
+      "nombre": "portugues",
+      "url": "https://iptv-org.github.io/iptv/languages/por.m3u",
+      "solo_peliculas": false,
+      "modo": "tolerante"
+    },
+    {
+      "nombre": "clasicos",
+      "url": "https://iptv-org.github.io/iptv/categories/classic.m3u",
+      "solo_peliculas": false,
+      "modo": "tolerante"
+    },
+    {
+      "nombre": "free_tv",
+      "url": "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8",
+      "solo_peliculas": true,
+      "modo": "tolerante"
+    },
+    {
+      "nombre": "pluto_mx",
+      "url": "https://raw.githubusercontent.com/BuddyChewChew/app-m3u-generator/main/playlists/plutotv_mx.m3u",
+      "solo_peliculas": true,
+      "modo": "tolerante"
+    },
+    {
+      "nombre": "pluto_ar",
+      "url": "https://raw.githubusercontent.com/BuddyChewChew/app-m3u-generator/main/playlists/plutotv_ar.m3u",
+      "solo_peliculas": true,
+      "modo": "tolerante"
+    },
+    {
+      "nombre": "pluto_cl",
+      "url": "https://raw.githubusercontent.com/BuddyChewChew/app-m3u-generator/main/playlists/plutotv_cl.m3u",
+      "solo_peliculas": true,
+      "modo": "tolerante"
+    },
+    {
+      "nombre": "plex_mx",
+      "url": "https://raw.githubusercontent.com/BuddyChewChew/app-m3u-generator/main/playlists/plex_mx.m3u",
+      "solo_peliculas": true,
+      "modo": "tolerante"
+    }
+  ],
+  "salida": "listas"
+}
