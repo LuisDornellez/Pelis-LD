@@ -3,6 +3,10 @@
 https://i.mjh.nz/.r/sbs-4syd.m3u8
 #EXTINF:-1 tvg-name="Nova Cinema" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/czech-republic/nova-cinema-cz.png" tvg-id="NovaCinema.cz" tvg-chno="9" tvg-country="CZ" group-title="Czech Republic",Nova Cinema
 https://sktv.mxnticek.eu/new/stream.php?ch=NovaCinema
+#EXTINF:-1 tvg-name="JOJ Cinema" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/czech-republic/joj-cinema-cz.png" tvg-id="JojCinema.cz" tvg-chno="25" tvg-country="CZ" group-title="Czech Republic",JOJ Cinema
+https://sktv.mxnticek.eu/new/stream.php?ch=JOJ%20Cinema
+#EXTINF:-1 tvg-name="CS Film" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/slovakia/cs-film-sk.png" tvg-id="CSFilm.cz" tvg-chno="26" tvg-country="CZ" group-title="Czech Republic",CS Film
+https://sktv.mxnticek.eu/new/stream.php?ch=CS%20Film
 #EXTINF:-1 tvg-name="Rotana Cinema" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/92/Rotana_Cinema_Egy.png" tvg-id="RotanaCinema.eg" tvg-chno="11" tvg-country="EG" group-title="Egypt",Rotana Cinema
 https://rotana.hibridcdn.net/rotananet/cinemamasr_net-7Y83PP5adWixDF93/playlist.m3u8
 #EXTINF:-1 tvg-name="Film+" tvg-logo="https://www.tvmustra.hu/logok/csatikon/filmplussz.gif" tvg-id="Film+.hu" tvg-chno="30" tvg-country="HU" group-title="Hungary",Film+

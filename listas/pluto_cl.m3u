@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://github.com/matthuisman/i.mjh.nz/raw/master/PlutoTV/cl.xml.gz"
-#EXTINF:-1 channel-id="62fb6d4308f5ec0007453c09" tvg-id="62fb6d4308f5ec0007453c09" tvg-chno="95" tvg-name="Christmas 365" tvg-logo="https://images.pluto.tv/channels/62fb6d4308f5ec0007453c09/colorLogoPNG.png" group-title="Movies",Christmas 365
+#EXTINF:-1 channel-id="62fb6d4308f5ec0007453c09" tvg-id="62fb6d4308f5ec0007453c09" tvg-chno="41" tvg-name="Christmas 365" tvg-logo="https://images.pluto.tv/channels/62fb6d4308f5ec0007453c09/colorLogoPNG.png" group-title="Movies",Christmas 365
 https://jmp2.uk/plu-62fb6d4308f5ec0007453c09.m3u8
 #EXTINF:-1 channel-id="6a56ae15bd858f210ae007fe" tvg-id="6a56ae15bd858f210ae007fe" tvg-chno="253" tvg-name="Classic TV Comedy" tvg-logo="https://images.pluto.tv/channels/6a56ae15bd858f210ae007fe/colorLogoPNG_1784069906159.png" group-title="Classic TV Comedy",Classic TV Comedy
 https://jmp2.uk/plu-6a56ae15bd858f210ae007fe.m3u8
@@ -37,6 +37,8 @@ https://jmp2.uk/plu-68d25c623175a2780d051d3a.m3u8
 https://jmp2.uk/plu-62ea3d24b8e02600071fa296.m3u8
 #EXTINF:-1 channel-id="62bdb0bcd707b9000739d2e5" tvg-id="62bdb0bcd707b9000739d2e5" tvg-chno="55" tvg-name="Pluto TV Drama Movies" tvg-logo="https://images.pluto.tv/channels/62bdb0bcd707b9000739d2e5/colorLogoPNG.png" group-title="Movies",Pluto TV Drama Movies
 https://jmp2.uk/plu-62bdb0bcd707b9000739d2e5.m3u8
+#EXTINF:-1 channel-id="62ea3f8a38acc80007072d26" tvg-id="62ea3f8a38acc80007072d26" tvg-chno="65" tvg-name="Pluto TV Horror" tvg-logo="https://images.pluto.tv/channels/62ea3f8a38acc80007072d26/colorLogoPNG.png" group-title="Movies",Pluto TV Horror
+https://jmp2.uk/plu-62ea3f8a38acc80007072d26.m3u8
 #EXTINF:-1 channel-id="69a9ae4d3bd16a4ed04240d7" tvg-id="69a9ae4d3bd16a4ed04240d7" tvg-chno="52" tvg-name="Pluto TV Retro Action Movies" tvg-logo="https://images.pluto.tv/channels/69a9ae4d3bd16a4ed04240d7/colorLogoPNG_1774879695281.png" group-title="Movies",Pluto TV Retro Action Movies
 https://jmp2.uk/plu-69a9ae4d3bd16a4ed04240d7.m3u8
 #EXTINF:-1 channel-id="69aee8a1acb7eb0bb68df641" tvg-id="69aee8a1acb7eb0bb68df641" tvg-chno="330" tvg-name="Pluto TV Retro Crime Action" tvg-logo="https://images.pluto.tv/channels/69aee8a1acb7eb0bb68df641/colorLogoPNG_1774899454178.png" group-title="Classic TV",Pluto TV Retro Crime Action
