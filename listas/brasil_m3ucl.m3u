@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="156" tvg-name="Rewind" tvg-logo="https://cdn.m3u.cl/logo/156_Rewind.png", Rewind ✪ | CL
-https://tls-cl.cdnz.cl/rewindtv/live/playlist.m3u8?PlaylistM3UCL
+https://www.rewindmusic.cl/senal/m3u/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="593" tvg-name="Agro Brasil TV" tvg-logo="https://cdn.m3u.cl/logo/593_Agro_Brasil_TV.png", Agro Brasil TV | BR
 https://live.agrobrasiltv.com.br/memfs/0f1f8f3d-96cb-4792-babe-c2169f30a577.m3u8?session=GxrnToeLVpURWXrzFL3puo&PlaylistM3UCL
 #EXTINF:-1 tvg-id="1028" tvg-name="ArarunaTV" tvg-logo="https://cdn.m3u.cl/logo/1028_ArarunaTV.png", ArarunaTV | BR
@@ -73,8 +73,6 @@ https://tv.arkeo.cl:1936/mundodelamusica/mundodelamusica/playlist.m3u8?PlaylistM
 https://isaocorp.cloudecast.com/toptv/index.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="571" tvg-name="Rede Vida" tvg-logo="https://cdn.m3u.cl/logo/571_Rede_Vida.jpg", Rede Vida | BR
 https://cvd1.cds.ebtcvd.net/live-redevida/smil:redevida.smil/playlist.m3u8?PlaylistM3UCL
-#EXTINF:-1 tvg-id="570" tvg-name="TV Aparecida" tvg-logo="https://cdn.m3u.cl/logo/570_TV_Aparecida.jpg", TV Aparecida | BR
-https://cdn.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="537" tvg-name="TV Evangelizar" tvg-logo="https://cdn.m3u.cl/logo/537_TV_Evangelizar.png", TV Evangelizar | BR
 https://5f593df7851db.streamlock.net/evangelizar/tv/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="566" tvg-name="TV Rede Gospel" tvg-logo="https://cdn.m3u.cl/logo/566_TV_Rede_Gospel.jpg", TV Rede Gospel | BR
