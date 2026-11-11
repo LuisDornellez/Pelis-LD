@@ -9,8 +9,6 @@ https://video05.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8?PlaylistM3UC
 https://stmv1.srvif.com/classique/classique/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="1718" tvg-name="Kanade Brasil" tvg-logo="https://cdn.m3u.cl/logo/1718_Kanade_Brasil.png", Kanade Brasil | BR
 https://streams.kanade.cl/webtv/kanadebr/index.m3u8?token=D3m0M3UCLWeb&PlaylistM3UCL
-#EXTINF:-1 tvg-id="572" tvg-name="Record News Espirito Santo" tvg-logo="https://cdn.m3u.cl/logo/572_Record_News_Espirito_Santo.png", Record News Espirito Santo | BR
-https://5cf4a2c2512a2.streamlock.net/8016/8016/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="583" tvg-name="Rede Brasil de Televisao" tvg-logo="https://cdn.m3u.cl/logo/583_Rede_Brasil_de_Televisao.png", Rede Brasil de Televisao | BR
 https://video09.logicahost.com.br/redebrasiloficial/redebrasiloficial/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="1307" tvg-name="Rede Mundo TV" tvg-logo="https://cdn.m3u.cl/logo/1307_Rede_Mundo_TV.png", Rede Mundo TV | BR
@@ -41,14 +39,10 @@ https://58a4464faef53.streamlock.net/impd/ngrp:impd_all/playlist.m3u8?PlaylistM3
 https://video02.logicahost.com.br/tvriopreto/tvriopreto/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="535" tvg-name="TV Serra Verde" tvg-logo="https://cdn.m3u.cl/logo/535_TV_Serra_Verde.jpg", TV Serra Verde | BR
 https://5d82644094cc0.streamlock.net:443/8020/8020/playlist.m3u8?PlaylistM3UCL
-#EXTINF:-1 tvg-id="992" tvg-name="TV Sim Cachoeiro" tvg-logo="https://cdn.m3u.cl/logo/992_TV_Sim_Cachoeiro.png", TV Sim Cachoeiro | BR
-https://5cf4a2c2512a2.streamlock.net:443/8104/8104/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="565" tvg-name="TV Sim Colatina" tvg-logo="https://cdn.m3u.cl/logo/565_TV_Sim_Colatina.png", TV Sim Colatina | BR
 https://5cf4a2c2512a2.streamlock.net:443/8132/8132/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="564" tvg-name="TV Sim Sao Mateus" tvg-logo="https://cdn.m3u.cl/logo/564_TV_Sim_Sao_Mateus.png", TV Sim Sao Mateus | BR
 https://5cf4a2c2512a2.streamlock.net:443/8236/8236/playlist.m3u8?PlaylistM3UCL
-#EXTINF:-1 tvg-id="544" tvg-name="TV Sul" tvg-logo="https://cdn.m3u.cl/logo/544_TV_Sul.jpg", TV Sul | BR
-https://live.cdn.upx.com/00046/myStream.sdp/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="1297" tvg-name="TV Ti Vejo" tvg-logo="https://cdn.m3u.cl/logo/1297_TV_Ti_Vejo.png", TV Ti Vejo | BR
 https://stmv1.srvif.com/ddacostenaro/ddacostenaro/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="575" tvg-name="TV Vicosa" tvg-logo="https://cdn.m3u.cl/logo/575_TV_Vicosa.jpg", TV Vicosa | BR
