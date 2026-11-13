@@ -9,6 +9,8 @@ https://video05.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8?PlaylistM3UC
 https://stmv1.srvif.com/classique/classique/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="1718" tvg-name="Kanade Brasil" tvg-logo="https://cdn.m3u.cl/logo/1718_Kanade_Brasil.png", Kanade Brasil | BR
 https://streams.kanade.cl/webtv/kanadebr/index.m3u8?token=D3m0M3UCLWeb&PlaylistM3UCL
+#EXTINF:-1 tvg-id="583" tvg-name="Rede Brasil de Televisao" tvg-logo="https://cdn.m3u.cl/logo/583_Rede_Brasil_de_Televisao.png", Rede Brasil de Televisao | BR
+https://video09.logicahost.com.br/redebrasiloficial/redebrasiloficial/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="1307" tvg-name="Rede Mundo TV" tvg-logo="https://cdn.m3u.cl/logo/1307_Rede_Mundo_TV.png", Rede Mundo TV | BR
 https://stream.cdn.provider.play.virtual.tv.br/REDEMUNDOSP/index.fmp4.m3u8?token=TOP2929&PlaylistM3UCL
 #EXTINF:-1 tvg-id="982" tvg-name="Teleweb TV" tvg-logo="https://cdn.m3u.cl/logo/982_Teleweb_TV.png", Teleweb TV | BR
@@ -41,12 +43,10 @@ https://5d82644094cc0.streamlock.net:443/8020/8020/playlist.m3u8?PlaylistM3UCL
 https://5cf4a2c2512a2.streamlock.net:443/8104/8104/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="565" tvg-name="TV Sim Colatina" tvg-logo="https://cdn.m3u.cl/logo/565_TV_Sim_Colatina.png", TV Sim Colatina | BR
 https://5cf4a2c2512a2.streamlock.net:443/8132/8132/playlist.m3u8?PlaylistM3UCL
-#EXTINF:-1 tvg-id="564" tvg-name="TV Sim Sao Mateus" tvg-logo="https://cdn.m3u.cl/logo/564_TV_Sim_Sao_Mateus.png", TV Sim Sao Mateus | BR
-https://5cf4a2c2512a2.streamlock.net:443/8236/8236/playlist.m3u8?PlaylistM3UCL
-#EXTINF:-1 tvg-id="544" tvg-name="TV Sul" tvg-logo="https://cdn.m3u.cl/logo/544_TV_Sul.jpg", TV Sul | BR
-https://live.cdn.upx.com/00046/myStream.sdp/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="1297" tvg-name="TV Ti Vejo" tvg-logo="https://cdn.m3u.cl/logo/1297_TV_Ti_Vejo.png", TV Ti Vejo | BR
 https://stmv1.srvif.com/ddacostenaro/ddacostenaro/playlist.m3u8?PlaylistM3UCL
+#EXTINF:-1 tvg-id="575" tvg-name="TV Vicosa" tvg-logo="https://cdn.m3u.cl/logo/575_TV_Vicosa.jpg", TV Vicosa | BR
+http://wz4.dnip.com.br/fratevitv/fratevitv.sdp/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="591" tvg-name="TVE" tvg-logo="https://cdn.m3u.cl/logo/591_TVE.jpg", TVE | BR
 http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="988" tvg-name="Vintage TV" tvg-logo="https://cdn.m3u.cl/logo/988_Vintage_TV.png", Vintage TV | BR
@@ -73,8 +73,6 @@ https://tv.arkeo.cl:1936/mundodelamusica/mundodelamusica/playlist.m3u8?PlaylistM
 https://isaocorp.cloudecast.com/toptv/index.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="571" tvg-name="Rede Vida" tvg-logo="https://cdn.m3u.cl/logo/571_Rede_Vida.jpg", Rede Vida | BR
 https://cvd1.cds.ebtcvd.net/live-redevida/smil:redevida.smil/playlist.m3u8?PlaylistM3UCL
-#EXTINF:-1 tvg-id="570" tvg-name="TV Aparecida" tvg-logo="https://cdn.m3u.cl/logo/570_TV_Aparecida.jpg", TV Aparecida | BR
-https://cdn.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="537" tvg-name="TV Evangelizar" tvg-logo="https://cdn.m3u.cl/logo/537_TV_Evangelizar.png", TV Evangelizar | BR
 https://5f593df7851db.streamlock.net/evangelizar/tv/playlist.m3u8?PlaylistM3UCL
 #EXTINF:-1 tvg-id="563" tvg-name="TV Universal" tvg-logo="https://cdn.m3u.cl/logo/563_TV_Universal.jpg", TV Universal | BR
