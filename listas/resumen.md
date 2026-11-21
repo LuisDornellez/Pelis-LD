@@ -1,13 +1,13 @@
-# Resumen (2026-11-20 14:47 UTC)
+# Resumen (2026-11-21 14:04 UTC)
 
 | Lista | Modo | Revisados | Funcionan | Dudosos | Caídos | Publicados |
 |---|---|---|---|---|---|---|
-| brasil_m3ucl | tolerante | 63 | 27 | 12 | 24 | 39 |
+| brasil_m3ucl | tolerante | 63 | 25 | 12 | 26 | 37 |
 | mexico_lg | tolerante | 207 | 188 | 15 | 4 | 203 |
-| espanol | tolerante | 2465 | 1754 | 378 | 333 | 2132 |
-| peliculas | tolerante | 795 | 570 | 153 | 72 | 723 |
-| portugues | tolerante | 485 | 298 | 124 | 63 | 422 |
-| clasicos | tolerante | 107 | 97 | 6 | 4 | 103 |
+| espanol | tolerante | 2461 | 1753 | 373 | 335 | 2126 |
+| peliculas | tolerante | 782 | 560 | 157 | 65 | 717 |
+| portugues | tolerante | 488 | 304 | 121 | 63 | 425 |
+| clasicos | tolerante | 84 | 74 | 6 | 4 | 80 |
 | free_tv | tolerante | 66 | 43 | 11 | 12 | 54 |
 | pluto_mx | tolerante | 22 | 22 | 0 | 0 | 22 |
 | pluto_ar | tolerante | 21 | 21 | 0 | 0 | 21 |
