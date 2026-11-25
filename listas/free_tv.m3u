@@ -5,6 +5,8 @@ https://i.mjh.nz/.r/sbs-4syd.m3u8
 https://sktv.mxnticek.eu/new/stream.php?ch=NovaCinema
 #EXTINF:-1 tvg-name="Rotana Cinema" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/92/Rotana_Cinema_Egy.png" tvg-id="RotanaCinema.eg" tvg-chno="11" tvg-country="EG" group-title="Egypt",Rotana Cinema
 https://rotana.hibridcdn.net/rotananet/cinemamasr_net-7Y83PP5adWixDF93/playlist.m3u8
+#EXTINF:-1 tvg-name="Film+" tvg-logo="https://www.tvmustra.hu/logok/csatikon/filmplussz.gif" tvg-id="Film+.hu" tvg-chno="30" tvg-country="HU" group-title="Hungary",Film+
+http://141.94.193.53:80/Film+_HD/index.m3u8
 #EXTINF:-1 tvg-name="Rai Movie" tvg-logo="https://i.imgur.com/RKpO8CE.png" tvg-id="RaiMovie.it" tvg-chno="24" tvg-country="IT" group-title="Italy",Rai Movie Ⓖ
 https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=747002&output=7&forceUserAgent=rainet/4.0.5
 #EXTINF:-1 tvg-name="La7 Cinema" tvg-logo="https://i.imgur.com/khPweok.png" tvg-id="LA7.Cinema.it" tvg-chno="29" tvg-country="IT" group-title="Italy",La7 Cinema
